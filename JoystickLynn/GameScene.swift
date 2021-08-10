@@ -11,7 +11,7 @@ import GameplayKit
 class GameScene: SKScene {
     
     // Sknodes
-    var player : SKNode?
+    var player : SKSpriteNode?
     var joystick : SKNode?
     var joystickKnob : SKNode?
     var halangan1: SKSpriteNode?
@@ -31,25 +31,25 @@ class GameScene: SKScene {
     //Player State
     var playerState : GKStateMachine!
     
-    required init?(coder aDecoder: NSCoder) {
-        super.init(coder: aDecoder)
-        fatalError("init(coder:) has not been implemented")
-        
-    }
+//    required init?(coder aDecoder: NSCoder) {
+//        super.init(coder: aDecoder)
+//        fatalError("init(coder:) has not been implemented")
+//
+//    }
 
     
     
-    override init(size: CGSize) {
-        
-       super.init(size: size)
-        
-        halangan1!.position = CGPoint(x: 500, y: 500)
-        halangan1!.anchorPoint = CGPoint(x: 0.5, y: 0.5)
-        halangan1!.color = .red
-        addChild(halangan1!)
-    }
-    
- 
+//    override init(size: CGSize) {
+//
+//       super.init(size: size)
+//
+//        halangan1!.position = CGPoint(x: 500, y: 500)
+//        halangan1!.anchorPoint = CGPoint(x: 0.5, y: 0.5)
+//        halangan1!.color = .red
+//        addChild(halangan1!)
+//    }
+//
+//
     
     
     // Didmove
@@ -57,7 +57,7 @@ class GameScene: SKScene {
         
         physicsWorld.contactDelegate = self
         
-        player = childNode(withName: "player")
+        player = childNode(withName: "player") as? SKSpriteNode
         joystick = childNode(withName: "joystick")
         joystickKnob = joystick?.childNode(withName: "knob")
         
